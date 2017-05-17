@@ -1,2 +1,5 @@
 #!/bin/sh -ex
 usermod -a -G mock zuul
+if grep -q jenkins /etc/passwd; then
+    usermod -a -G mock jenkins
+fi
