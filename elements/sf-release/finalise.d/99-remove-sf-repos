@@ -1,2 +1,2 @@
 #!/bin/sh -ex
-rm /etc/yum.repos.d/sf-release.repo
+yum remove -y sf-release
