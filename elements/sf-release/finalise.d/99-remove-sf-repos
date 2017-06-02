@@ -1,2 +1,4 @@
 #!/bin/sh -ex
-yum remove -y sf-release
+if [ "z${SF_KEEP_RELEASE}" == "z" ]; then
+    yum remove -y sf-release
+fi

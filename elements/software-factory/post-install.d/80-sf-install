@@ -1,0 +1,55 @@
+#!/bin/bash -ex
+
+yum install -y sf-config
+
+function ansible_install {
+    local role=$1
+    local params=$2
+    local ansible_debug="-v"
+
+    [ -z "$DEBUG" ] || ansible_debug="-vvv"
+    cat <<EOF> /tmp/ansible-install-playbook
+- hosts: localhost
+  connection: local
+  roles:
+    - { role: "$role", action: "install", $params }
+EOF
+    echo "ansible_install: installing $role with \"${params}\""
+    ANSIBLE_CONFIG=/usr/share/sf-config/ansible/ansible.cfg ansible-playbook $ansible_debug /tmp/ansible-install-playbook
+    rm /tmp/ansible-install-playbook
+}
+
+ansible_install sf-base
+ansible_install sf-install-server
+ansible_install sf-mysql
+ansible_install sf-gateway
+ansible_install sf-jenkins
+ansible_install sf-managesf
+ansible_install sf-cauth
+ansible_install sf-lecm
+ansible_install sf-zuul
+ansible_install sf-logserver
+ansible_install sf-lodgeit
+ansible_install sf-murmur
+ansible_install sf-etherpad
+ansible_install sf-gerrit
+ansible_install sf-gerritbot
+ansible_install sf-gitweb
+ansible_install sf-nodepool
+ansible_install sf-storyboard
+ansible_install sf-storyboard-webclient
+ansible_install sf-mirror
+ansible_install sf-elasticsearch
+ansible_install sf-logstash
+ansible_install sf-kibana
+ansible_install sf-grafana
+ansible_install sf-rabbitmq
+ansible_install sf-job-logs-gearman-client
+ansible_install sf-job-logs-gearman-worker
+ansible_install sf-repoxplorer
+ansible_install sf-mosquitto
+ansible_install sf-germqtt
+ansible_install sf-ochlero
+ansible_install sf-collectd
+ansible_install sf-influxdb
+yum update -y --exclude "jenkins"
