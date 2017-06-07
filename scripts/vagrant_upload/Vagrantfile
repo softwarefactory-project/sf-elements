@@ -1,0 +1,71 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+# http://softwarefactory-project.io/docs/contribute.html#prepare-a-development-environment
+
+Vagrant.configure(2) do |config|
+
+  config.ssh.forward_agent = true
+
+  config.vm.provider "libvirt" do |vb|
+    vb.connect_via_ssh = false
+    vb.driver = "kvm"
+    vb.memory = 3072
+    vb.cpus = 2
+    vb.video_type = "qxl"
+    end
+
+  config.vm.provision "shell", privileged: false, inline: <<-SHELL
+
+    # Install prerequisites
+    sudo yum install -y epel-release
+    sudo yum install -y git git-review vim-enhanced tmux curl python-devel wget python-pip mariadb-devel python-virtualenv  python34 python34-devel gcc libffi-devel openldap-devel openssl-devel python-sphinx python-tox python-flake8 ansible
+
+    mkdir zuul-rpm-build
+    mkdir software-factory
+    sudo mkdir -p /var/lib/sf/
+    sudo mkdir -p /artifacts
+    sudo ln -s /home/$USER/zuul-rpm-build /var/lib/sf/zuul-rpm-build
+    cd software-factory && git clone https://softwarefactory-project.io/r/software-factory/sfinfo
+    git clone https://softwarefactory-project.io/r/software-factory/software-factory
+    sudo cp -v sfinfo/rpm-gpg/* /etc/pki/rpm-gpg/
+    sudo yum install -y zuul-cloner
+    for repo in $(python << EOF
+import yaml
+repos = yaml.load(open('sfinfo/sf-master.yaml'))
+for r in repos['packages']:
+    suffix = r['name']
+    if r['source'] == 'external':
+        suffix += '-distgit'
+    print suffix
+    if 'distgit' in r:
+        print r['distgit']
+EOF); do
+      git clone https://softwarefactory-project.io/r/$repo || (cd /home/vagrant/$repo && git fetch --all && cd -);
+    done
+
+    # install GUI testing tools
+    sudo yum install -y firefox Xvfb libXfont Xorg jre
+    sudo mkdir /usr/lib/selenium /var/log/selenium /var/log/Xvfb
+    sudo wget -O /usr/lib/selenium/selenium-server.jar http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar
+    sudo pip install selenium pyvirtualdisplay
+
+    # install ffmpeg
+    sudo rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
+    sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm
+    sudo yum update
+    sudo yum install -y ffmpeg
+    sudo pip3 install asciinema
+
+    sudo yum install -y rpmdevtools createrepo mock python-jinja2
+    sudo /usr/sbin/usermod -a -G mock $USER
+
+    echo 46.231.133.231 koji.softwarefactory-project.io | sudo tee -a /etc/hosts
+
+    # some useful tools
+    sudo pip install virtualenvwrapper
+  SHELL
+
+  config.vm.provision "file", source: "~/.gitconfig", destination: "~/.gitconfig"
+  config.vm.provision "file", source: "~/.vimrc", destination: "~/.vimrc"
+end
+
