@@ -1,0 +1,4 @@
+#!/bin/sh -ex
+mkdir -m 0700 /root/.ssh
+cp /tmp/in_target.d/nodepool_rsa.pub /root/.ssh/authorized_keys
+chmod 0600 /root/.ssh/authorized_keys
