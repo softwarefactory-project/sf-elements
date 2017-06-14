@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_df1dbb67",
+        "filename": "elements/nodepool-minimal/post-install.d/50-root-authorized_keys",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2017-06-14T14:17:46Z",
+      "side": 1,
+      "message": "I\u0027ll use cat \u003e\u003e* then",
+      "parentUuid": "baa041b7_bc55651e",
+      "revId": "82795535df351fcd55f5e0a7fa512a42d7169e0c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_3c403556",
         "filename": "elements/sf-zuul-worker/post-install.d/50-zuul-authorized_keys",
         "patchSetId": 2
@@ -42,6 +60,24 @@
         "endLine": 6,
         "endChar": 20
       },
+      "revId": "82795535df351fcd55f5e0a7fa512a42d7169e0c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_bf1af76c",
+        "filename": "elements/sf-zuul-worker/post-install.d/50-zuul-authorized_keys",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2017-06-14T14:17:46Z",
+      "side": 1,
+      "message": "We could do that, though the zuul user is likely going to be used as an ansible_user.",
+      "parentUuid": "baa041b7_3c403556",
       "revId": "82795535df351fcd55f5e0a7fa512a42d7169e0c",
       "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
       "unresolved": false
