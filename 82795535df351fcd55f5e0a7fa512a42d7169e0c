@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_bc55651e",
+        "filename": "elements/nodepool-minimal/post-install.d/50-root-authorized_keys",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 22
+      },
+      "writtenOn": "2017-06-14T13:56:19Z",
+      "side": 1,
+      "message": "should be better to cat $key \u003e /root/.ssh/authorized_keys if another element would add data to authorized_keys",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 63
+      },
+      "revId": "82795535df351fcd55f5e0a7fa512a42d7169e0c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_3c403556",
+        "filename": "elements/sf-zuul-worker/post-install.d/50-zuul-authorized_keys",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 22
+      },
+      "writtenOn": "2017-06-14T13:56:19Z",
+      "side": 1,
+      "message": "Why don\u0027t use bash instead sh to avoid error if user wants set alias in bashrc ?",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 20
+      },
+      "revId": "82795535df351fcd55f5e0a7fa512a42d7169e0c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
