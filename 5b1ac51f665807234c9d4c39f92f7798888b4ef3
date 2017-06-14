@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_9cee218a",
+        "filename": "elements/vagrant/post-install.d/95-vagrant-setup",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-06-14T12:22:10Z",
+      "side": 1,
+      "message": "that\u0027s the point though, making any box produced this way available through vagrant\u0027s VM catalog. Private boxes can be dealt with separately",
+      "parentUuid": "baa041b7_dcdb891a",
+      "revId": "5b1ac51f665807234c9d4c39f92f7798888b4ef3",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_bcd8c51e",
         "filename": "elements/vagrant/post-install.d/95-vagrant-setup",
         "patchSetId": 2
