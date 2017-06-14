@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_1cd21101",
+        "filename": "elements/vagrant/post-install.d/95-vagrant-setup",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2017-06-14T09:11:20Z",
+      "side": 1,
+      "message": "Why not using /home/vagrant instead of ~vagrant ?",
+      "revId": "5b1ac51f665807234c9d4c39f92f7798888b4ef3",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_fcce4d59",
+        "filename": "elements/vagrant/post-install.d/95-vagrant-setup",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2017-06-14T09:11:20Z",
+      "side": 1,
+      "message": "Same here, why not /root ?",
+      "revId": "5b1ac51f665807234c9d4c39f92f7798888b4ef3",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_dcdb891a",
+        "filename": "elements/vagrant/post-install.d/95-vagrant-setup",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2017-06-14T09:11:20Z",
+      "side": 1,
+      "message": "making a public box, which would be super insecure...",
+      "revId": "5b1ac51f665807234c9d4c39f92f7798888b4ef3",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_bcd8c51e",
+        "filename": "elements/vagrant/post-install.d/95-vagrant-setup",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2017-06-14T09:11:20Z",
+      "side": 1,
+      "message": "Use systemctl enable instead.",
+      "revId": "5b1ac51f665807234c9d4c39f92f7798888b4ef3",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
