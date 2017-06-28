@@ -1,0 +1,3 @@
+#!/bin/sh -ex
+cp /opt/nodepool-scripts/*.pem /etc/pki/ca-trust/source/anchors/
+update-ca-trust
