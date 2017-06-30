@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-yum install -y sf-config
+yum install -y sf-config cloud-init cloud-utils-growpart
 
 function ansible_install {
     local role=$1
