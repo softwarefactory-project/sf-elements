@@ -1,55 +1,82 @@
 #!/bin/bash -ex
 
-yum install -y sf-config
+yum install -y sf-config cloud-init cloud-utils-growpart
 
-function ansible_install {
-    local role=$1
-    local params=$2
-    local ansible_debug="-v"
-
-    [ -z "$DEBUG" ] || ansible_debug="-vvv"
-    cat <<EOF> /tmp/ansible-install-playbook
+cat <<EOF> /tmp/ansible-install-playbook
 - hosts: localhost
   connection: local
   roles:
-    - { role: "$role", action: "install", $params }
+    - name: "sf-base"
+      action: "install"
+    - name: "sf-install-server"
+      action: "install"
+    - name: "sf-mysql"
+      action: "install"
+    - name: "sf-rabbitmq"
+      action: "install"
+    - name: "sf-gateway"
+      action: "install"
+    - name: "sf-cauth"
+      action: "install"
+    - name: "sf-managesf"
+      action: "install"
+    - name: "sf-lecm"
+      action: "install"
+    - name: "sf-etherpad"
+      action: "install"
+    - name: "sf-lodgeit"
+      action: "install"
+    - name: "sf-gitweb"
+      action: "install"
+    - name: "sf-gerrit"
+      action: "install"
+    - name: "sf-gerritbot"
+      action: "install"
+    - name: "sf-jenkins"
+      action: "install"
+    - name: "sf-murmur"
+      action: "install"
+    - name: "sf-elasticsearch"
+      action: "install"
+    - name: "sf-job-logs-gearman-client"
+      action: "install"
+    - name: "sf-job-logs-gearman-worker"
+      action: "install"
+    - name: "sf-logstash"
+      action: "install"
+    - name: "sf-kibana"
+      action: "install"
+    - name: "sf-mirror"
+      action: "install"
+    - name: "sf-storyboard"
+      action: "install"
+    - name: "sf-storyboard-webclient"
+      action: "install"
+    - name: "sf-repoxplorer"
+      action: "install"
+    - name: "sf-firehose"
+      action: "install"
+    - name: "sf-logserver"
+      action: "install"
+    - name: "sf-zookeeper"
+      action: "install"
+    - name: "sf-nodepool"
+      action: "install"
+      nodepool_services: ['nodepool-launcher', 'nodepool-builder']
+    - name: "sf-zuul"
+      action: "install"
+      zuul_services: ['zuul-server', 'zuul-merger', 'zuul-launcher']
+    - name: "sf-mosquitto"
+      action: "install"
+    - name: "sf-ochlero"
+      action: "install"
+    - name: "sf-germqtt"
+      action: "install"
 EOF
-    echo "ansible_install: installing $role with \"${params}\""
-    ANSIBLE_CONFIG=/usr/share/sf-config/ansible/ansible.cfg ansible-playbook $ansible_debug /tmp/ansible-install-playbook
-    rm /tmp/ansible-install-playbook
-}
 
-ansible_install sf-base
-ansible_install sf-install-server
-ansible_install sf-mysql
-ansible_install sf-gateway
-ansible_install sf-jenkins
-ansible_install sf-managesf
-ansible_install sf-cauth
-ansible_install sf-lecm
-ansible_install sf-zuul
-ansible_install sf-logserver
-ansible_install sf-lodgeit
-ansible_install sf-murmur
-ansible_install sf-etherpad
-ansible_install sf-gerrit
-ansible_install sf-gerritbot
-ansible_install sf-gitweb
-ansible_install sf-nodepool
-ansible_install sf-storyboard
-ansible_install sf-storyboard-webclient
-ansible_install sf-mirror
-ansible_install sf-elasticsearch
-ansible_install sf-logstash
-ansible_install sf-kibana
-ansible_install sf-grafana
-ansible_install sf-rabbitmq
-ansible_install sf-job-logs-gearman-client
-ansible_install sf-job-logs-gearman-worker
-ansible_install sf-repoxplorer
-ansible_install sf-mosquitto
-ansible_install sf-germqtt
-ansible_install sf-ochlero
-ansible_install sf-collectd
-ansible_install sf-influxdb
+[ -z "$DEBUG" ] || ansible_debug="-vvv"
+
+ANSIBLE_CONFIG=/usr/share/sf-config/ansible/ansible.cfg ansible-playbook $ansible_debug /tmp/ansible-install-playbook
+rm /tmp/ansible-install-playbook
+
 yum update -y --exclude "jenkins"
