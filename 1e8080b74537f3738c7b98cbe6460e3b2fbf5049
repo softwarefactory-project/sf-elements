@@ -1,0 +1,8 @@
+Code-Review+2: Matthieu Huin <mhu@enovance.com>
+Workflow+1: Tristan de Cacqueray <tdecacqu@redhat.com>
+Verified+2: Jenkins CI <jenkins@softwarefactory-project.io>
+Submitted-by: Jenkins CI <jenkins@softwarefactory-project.io>
+Submitted-at: Mon, 10 Jul 2017 12:02:01 +0000
+Reviewed-on: https://softwarefactory-project.io/r/8850
+Project: software-factory/sf-elements
+Branch: refs/heads/master
