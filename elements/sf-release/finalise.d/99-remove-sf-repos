@@ -1,4 +1,11 @@
 #!/bin/sh -ex
 if [ "z${SF_KEEP_RELEASE}" == "z" ]; then
-    yum remove -y sf-release
+    yum remove -y sf-release \
+        centos-release-openstack-newton \
+        centos-release-openstack-ocata \
+        centos-release-qemu-ev \
+        centos-release-virt-common \
+        centos-release-opstools \
+        centos-release-ceph-jewel \
+        centos-release-storage-common
 fi
