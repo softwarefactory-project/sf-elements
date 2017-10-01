@@ -3,6 +3,7 @@ if [ "z${SF_KEEP_RELEASE}" == "z" ]; then
     yum remove -y sf-release \
         centos-release-openstack-newton \
         centos-release-openstack-ocata \
+        centos-release-openstack-pike \
         centos-release-qemu-ev \
         centos-release-virt-common \
         centos-release-opstools \
