@@ -1,0 +1,2 @@
+#!/bin/sh -ex
+sudo cp /var/lib/nodepool3/.ssh/zuul_rsa.pub $TMP_HOOKS_PATH/zuul_rsa.pub

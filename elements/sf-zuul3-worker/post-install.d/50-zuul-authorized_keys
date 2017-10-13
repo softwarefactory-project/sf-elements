@@ -1,0 +1,10 @@
+#!/bin/sh -ex
+mkdir -m 0700 /var/lib/zuul/.ssh
+if [ -f /tmp/in_target.d/nodepool_rsa.pub ]; then
+    cat /tmp/in_target.d/nodepool_rsa.pub >> /var/lib/zuul/.ssh/authorized_keys
+fi
+cat /tmp/in_target.d/zuul_rsa.pub >> /var/lib/zuul/.ssh/authorized_keys
+chmod 0600 /var/lib/zuul/.ssh/authorized_keys
+chown -R zuul:zuul /var/lib/zuul
+chsh -s /bin/bash zuul
+echo -e "Defaults    !requiretty\nzuul ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/zuul
