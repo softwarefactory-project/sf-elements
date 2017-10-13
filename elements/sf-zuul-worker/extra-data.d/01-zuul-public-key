@@ -1,2 +1,7 @@
 #!/bin/sh -ex
-sudo cp /var/lib/nodepool/.ssh/zuul_rsa.pub $TMP_HOOKS_PATH/zuul_rsa.pub
+if [ -f /var/lib/nodepool/.ssh/zuul_rsa.pub ]; then
+    sudo cp /var/lib/nodepool/.ssh/zuul_rsa.pub $TMP_HOOKS_PATH/zuul_rsa.pub
+fi
+if [ -f /var/opt/rh/rh-python35/lib/nodepool/.ssh/zuul_rsa.pub ]; then
+    sudo cp /var/opt/rh/rh-python35/lib/nodepool/.ssh/zuul_rsa.pub $TMP_HOOKS_PATH/zuul_rsa.pub
+fi
