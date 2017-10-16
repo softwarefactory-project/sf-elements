@@ -1,0 +1,9 @@
+Code-Review+1: Nicolas HICHER <nhicher@redhat.com>
+Code-Review+2: Fabien Boucher <fboucher@redhat.com>
+Workflow+1: Fabien Boucher <fboucher@redhat.com>
+Verified+2: Jenkins CI <jenkins@softwarefactory-project.io>
+Submitted-by: Jenkins CI <jenkins@softwarefactory-project.io>
+Submitted-at: Mon, 16 Oct 2017 12:07:27 +0000
+Reviewed-on: https://softwarefactory-project.io/r/9870
+Project: software-factory/sf-elements
+Branch: refs/heads/master
