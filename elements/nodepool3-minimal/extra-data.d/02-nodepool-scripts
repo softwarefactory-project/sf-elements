@@ -1,0 +1,4 @@
+#!/bin/sh -ex
+udo cp -a ${NODEPOOL_SCRIPTDIR:-/etc/nodepool3/scripts} $TMP_MOUNT_PATH/opt/nodepool-scripts
+
+sudo chmod -R 0555 $TMP_MOUNT_PATH/opt/nodepool-scripts
