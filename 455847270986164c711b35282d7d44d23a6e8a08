@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_e3ec7091",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2017-10-17T15:19:57Z",
+      "side": 1,
+      "message": "Separate elements for nodepool2/nodepool3 and zuul2/zuul3",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "455847270986164c711b35282d7d44d23a6e8a08",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_c3028c3e",
+        "filename": "elements/nodepool3-minimal/element-deps",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2017-10-17T15:19:57Z",
+      "side": 1,
+      "message": "Could you add simple-init here",
+      "revId": "455847270986164c711b35282d7d44d23a6e8a08",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_a3ff9833",
+        "filename": "elements/nodepool3-minimal/element-deps",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2017-10-17T15:19:57Z",
+      "side": 1,
+      "message": "Also could you add simple-init in elements / nodepool-minimal / element-deps too for nodepool v2.",
+      "revId": "455847270986164c711b35282d7d44d23a6e8a08",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
