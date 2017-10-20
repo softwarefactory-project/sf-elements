@@ -1,5 +1,5 @@
 #!/bin/sh -ex
-mkdir -m 0700 /var/lib/zuul/.ssh
+mkdir -p -m 0700 /var/lib/zuul/.ssh
 if [ -f /tmp/in_target.d/nodepool_rsa.pub ]; then
     cat /tmp/in_target.d/nodepool_rsa.pub >> /var/lib/zuul/.ssh/authorized_keys
 fi
