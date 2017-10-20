@@ -1,4 +1,4 @@
 Make sure the instance is usable by nodepool3:
 
 * copy ssh public key
-* create nodepool dir and copy scripts
+* copy nodepool scripts
