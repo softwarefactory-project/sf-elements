@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_b5bea9fd",
+        "filename": "sf-elements.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-10-20T15:41:53Z",
+      "side": 1,
+      "message": "Nice!",
+      "revId": "7bb9c4f7bcd6cbe9451d84790d8fb4c276e18983",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}

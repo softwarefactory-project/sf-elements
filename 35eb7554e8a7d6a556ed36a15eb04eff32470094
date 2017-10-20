@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_d5c11d82",
+        "filename": "elements/nodepool3-minimal/extra-data.d/02-nodepool-scripts",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-10-20T15:41:53Z",
+      "side": 0,
+      "message": "it might be empty for now, but are we sure it\u0027s not going to change in the future? Maybe we should keep this",
+      "revId": "35eb7554e8a7d6a556ed36a15eb04eff32470094",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
