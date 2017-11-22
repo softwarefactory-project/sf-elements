@@ -1,4 +1,7 @@
 #!/bin/sh -ex
 mkdir -m 0700 /root/.ssh
+if [ -f /tmp/in_target.d/jenkins_rsa.pub ]; then
+    cat /tmp/in_target.d/jenkins_rsa.pub >> /root/.ssh/authorized_keys
+fi
 cat /tmp/in_target.d/nodepool_rsa.pub >> /root/.ssh/authorized_keys
 chmod 0600 /root/.ssh/authorized_keys
