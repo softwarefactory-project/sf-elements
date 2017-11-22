@@ -1,2 +1,9 @@
 #!/bin/sh -ex
 sudo cp /var/lib/nodepool/.ssh/zuul_rsa.pub $TMP_HOOKS_PATH/zuul_rsa.pub
+
+# To be removed after the 3.0 release
+for key in jenkins nodepool; do
+    if [ -f /var/lib/nodepool/.ssh/${key}_rsa.pub ]; then
+	cat /var/lib/nodepool/.ssh/${key}_rsa.pub | sudo tee -a $TMP_HOOKS_PATH/zuul_rsa.pub > /dev/null
+    fi
+done
