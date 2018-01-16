@@ -3,4 +3,7 @@ createrepo:
 mock:
 python-jinja2:
 rpmlint:
+rpm-sign:
+expect:
+gnupg2:
 koji:
