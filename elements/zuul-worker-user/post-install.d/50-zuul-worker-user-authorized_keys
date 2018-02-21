@@ -16,4 +16,4 @@ cat /tmp/in_target.d/zuul_rsa.pub >> /home/zuul-worker/.ssh/authorized_keys
 chmod 0600 /home/zuul-worker/.ssh/authorized_keys
 chown -R zuul-worker:zuul-worker /home/zuul-worker
 
-echo -e "Defaults    !requiretty\nzuul-worker ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/zuul-worker
+echo -e "Defaults    !requiretty\nzuul-worker ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/zuul
