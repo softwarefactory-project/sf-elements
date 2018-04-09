@@ -1,3 +1,4 @@
+block-device-mbr
 vm
 simple-init
 growroot
