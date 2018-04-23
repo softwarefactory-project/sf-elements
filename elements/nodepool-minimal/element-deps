@@ -1,5 +1,6 @@
 block-device-mbr
 vm
-simple-init
 growroot
+dhcp-all-interfaces
 openssh-server
+package-installs
