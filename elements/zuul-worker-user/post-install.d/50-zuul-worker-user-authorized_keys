@@ -16,4 +16,10 @@ cat /tmp/in_target.d/zuul_rsa.pub >> /home/zuul-worker/.ssh/authorized_keys
 chmod 0600 /home/zuul-worker/.ssh/authorized_keys
 chown -R zuul-worker:zuul-worker /home/zuul-worker
 
-echo -e "Defaults    !requiretty\nzuul-worker ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/zuul
+cat > /etc/sudoers.d/zuul << EOF
+Defaults    !requiretty
+zuul-worker ALL=(ALL) NOPASSWD:ALL
+EOF
+chmod 0440 /etc/sudoers.d/zuul
+
+visudo -c || die "Error setting zuul sudo!"
