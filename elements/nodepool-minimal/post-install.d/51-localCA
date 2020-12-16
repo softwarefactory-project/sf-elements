@@ -1,4 +1,5 @@
 #!/bin/sh -ex
+mkdir -p /etc/pki/ca-trust/source/anchors/
 if [ -f /opt/nodepool-scripts/localCA.pem ]; then
     cp /opt/nodepool-scripts/localCA.pem /etc/pki/ca-trust/source/anchors/
     update-ca-trust
